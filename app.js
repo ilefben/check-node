@@ -1,10 +1,10 @@
 console.log("start running");
 const fs = require("fs");
 fs.appendFileSync("welcome.txt", "Hello node");
-function readData(err, data) {
-  if (err) {
-    console.log(err);
+var data = "this the data of the hello.txt file";
+fs.writeFile("hello.txt", data, (error) => {
+  if (error) {
+    console.log("something wrong");
   }
-  console.log(data);
-}
-fs.readFile("hello.txt", readData);
+  console.log("here is the file's data :", data);
+});
